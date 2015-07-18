@@ -33,6 +33,8 @@ namespace Voat
 
             ModelMetadataProviders.Current = new CachedDataAnnotationsModelMetadataProvider();
 
+            // TODO: initialize and configure storage account
+
             // USE ONLY FOR DEBUG: clear all sessions used for online users count
             // SessionTracker.RemoveAllSessions();
         }
@@ -226,6 +228,14 @@ namespace Voat
             get
             {
                 return (bool)configValues[CONFIGURATION.CacheDisabled];
+            }
+        }
+
+        public static bool UseContentDeliveryNetwork
+        {
+            get
+            {
+                return (bool)configValues[CONFIGURATION.UseContentDeliveryNetwork];
             }
         }
         #endregion 

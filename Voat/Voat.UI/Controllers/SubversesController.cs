@@ -13,7 +13,6 @@ All Rights Reserved.
 */
 
 using System;
-using System.Configuration;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
@@ -1854,6 +1853,9 @@ namespace Voat.Controllers
         [OutputCache(Duration = 600, VaryByParam = "none")]
         public ActionResult TopViewedSubmissions24Hours()
         {
+            // DEBUG
+            return null;
+
             //var submissions = 
             var cacheData = CacheHandler.Register("TopViewedSubmissions24Hours", new Func<object>(() => {
                 using (voatEntities db = new voatEntities(CONSTANTS.CONNECTION_READONLY)){
